@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
-    version: "draft", // 'draft' or 'published'
+    version: process.env.STORYBLOK_PREVIEW_SECRET ? "draft" : "published",
     resolve_relations: [
       
     ]
